@@ -1,2 +1,5 @@
 venv
-__pycache__
+ONET SCRAPPING API/__pycache__/
+ONET SCRAPPING API/input/
+ONET SCRAPPING API/output/
+ONET SCRAPPING API/util/__pycache__/

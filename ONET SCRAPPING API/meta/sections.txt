@@ -1,0 +1,15 @@
+Tasks,task,statement,
+Technology Skills,category,example,title
+Tools Used,category,example,title
+Tools Technology,category,example,title
+Knowledge,element,description,
+Skills,element,description,
+Abilities,element,description,
+Work Activities,element,description,
+Detailed Work Activities,activity,name,
+Work Context,element,description,
+Job Zone,
+Education,level_required,
+Interests,element,description,
+Work Styles,element,description,
+Work Values,element,description,

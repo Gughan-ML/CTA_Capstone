@@ -20,10 +20,10 @@ class OnetWebService:
 
     def call(self, path, *query):
         url = self._url_root + path
-        print(url)
+        #print(url)
         if len(query) > 0:
-            url = urllib.parse.unquote(url+query[0])
-            print(url)
+            url = urllib.parse.unquote(url+"/".join(query))
+            #print(url)
         req = urllib.request.Request(url, None, self._headers)
         handle = None
         try:
