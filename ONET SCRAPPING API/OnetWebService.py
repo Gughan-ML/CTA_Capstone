@@ -3,8 +3,13 @@ import urllib.request, urllib.error, urllib.parse
 import base64
 import json
 
+'''
+Class which is responsible for establishing the connection with ONET api and retrive the data
+'''
 class OnetWebService:
-
+    '''
+    Constructor which uses the credentials from the config.ini in util to establish connection with API
+    '''
     def __init__(self, username, password):
         self._headers = {
             'User-Agent': 'python-OnetWebService/1.00 (bot)',
@@ -12,6 +17,9 @@ class OnetWebService:
             'Accept': 'application/json' }
         self.set_version()
 
+    '''
+    Setting up the base url
+    '''
     def set_version(self, version = None):
         if version is None:
             self._url_root = 'https://services.onetcenter.org/ws/'
@@ -19,11 +27,9 @@ class OnetWebService:
             self._url_root = 'https://services.onetcenter.org/v' + version + '/ws/'
 
     def call(self, path, *query):
-        url = self._url_root + path
-        #print(url)
+        url = self._url_root + path #based one the path provided it will either call base API or miliarty API
         if len(query) > 0:
             url = urllib.parse.unquote(url+"/".join(query))
-            #print(url)
         req = urllib.request.Request(url, None, self._headers)
         handle = None
         try:

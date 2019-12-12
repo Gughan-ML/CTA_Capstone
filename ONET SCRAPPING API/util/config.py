@@ -1,6 +1,11 @@
 from configparser import ConfigParser
 import os
 
+'''
+Config utility function which uses the config.ini to get the configurations needed for various connections
+Current version uses the credentials for the onet which needs to be configured at a later time to future ones
+Any possible further connections can reuse this function by editing the config.ini file
+'''
 def config(filename=os.path.dirname(os.path.realpath(__file__))+'/config.ini', section='credentials'):
     # create a parser
     parser = ConfigParser()

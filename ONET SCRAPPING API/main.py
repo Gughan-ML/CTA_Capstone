@@ -5,9 +5,14 @@ import pandas as pd
 from Get_Job_Description import get_job_description
 from Get_Military_Code import get_military_code
 
+'''
+Controller functions which is responsible for the whole crawling function to be run as intended.
+Reads the onet job codes from the input folder and calls the api to get the data and stores everything
+in a pandas dataframe and finally writes the output to the folder
+'''
 def main():
-    credentials = config()
-    client = OnetWebService(credentials['username'],credentials['password'])
+    credentials = config() #obtain credentials
+    client = OnetWebService(credentials['username'],credentials['password']) #obtain connection 
     base_path = os.path.dirname(os.path.realpath(__file__))+"/"
     input_path = "input/"
     meta_path = "meta/"

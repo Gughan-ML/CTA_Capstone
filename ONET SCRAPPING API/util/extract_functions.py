@@ -1,3 +1,9 @@
+#extract utility functions will used across varations for the extraction of various contents
+
+'''
+extract content is an utility function which takes sections like tasks, primary responsbilities
+and splits it line by line and returnes multiple lines into single ";" separated line
+'''
 def extract_content(response,key='',identifier=''):
     output = []
     if len(response)>0:
@@ -11,9 +17,16 @@ def extract_content(response,key='',identifier=''):
                 output.append(tech_category+" - "+category_values)
         return "#".join(output)
 
+'''
+Format of education warranted the need of the separate extract function
+'''
 def extract_education(response,key='',identifier=''):
     return extract_content(response[key],key="name",identifier='')
 
+'''
+Each ONET job code has multiple military occupational codes (MOC) and there are duplicates in the matching
+the following extract function get the MOCs removes all the duplicates and returns a # separated line 
+'''
 def extract_mocs(response,key=''):
     codes = []
     moc_category = []

@@ -1,3 +1,7 @@
+
+'''
+This file contains generic functions that can be shared acrosss the package 
+'''
 import json
 def read_file(path):
     with open(path) as f:
