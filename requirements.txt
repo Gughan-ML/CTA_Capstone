@@ -1,5 +1,5 @@
 beautifulsoup4==4.8.0
-joblib==0.14.1
+joblib==1.2.0
 lxml==4.4.2
 nltk==3.4.5
 numpy==1.17.2
